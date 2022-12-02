@@ -62,11 +62,8 @@ func part2() {
 	}
 	sums = append(sums, int(current_sum)) //add the last item at the end
 
-	sort.Slice(sums, func(i, j int) bool {
-		return sums[i] > sums[j]
-	})
-
-	top3 := sums[0] + sums[1] + sums[2]
+	sort.Ints(sums)
+	top3 := sums[len(sums)-3] + sums[len(sums)-2] + sums[len(sums)-1]
 
 	fmt.Printf("top3: %v\n", top3)
 }
